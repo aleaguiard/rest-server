@@ -5,7 +5,7 @@
 Se ha creado una aplicación servidor (`serviciosrest`), que interactúa con la aplicación POSTMAN. 
 A través de esta última interactuamos con la aplicación servidor introduciendo la URL donde se levanta el servicio (`http://localhost:8080/biblioteca`) y configurando el método HTTP, así como el body con los métodos en los que fuere necesario.
 
-![Estructura](Capturas/00.%20Estructura%20proyectos%20Postman.png){width=50%}
+![Estructura](Capturas/00.%20Estructura%20proyectos%20Postman.png)
 
 
 ### Aplicación Servidor: `serviciosrest`
