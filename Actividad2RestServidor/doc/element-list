@@ -1,0 +1,4 @@
+serviciorest.servidor
+serviciorest.servidor.controlador
+serviciorest.servidor.modelo.entidad
+serviciorest.servidor.modelo.persistencia
