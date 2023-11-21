@@ -25,7 +25,7 @@ public class DaoLibro {
     * Crea la lista de libros e inicializa algunos libros de muestra.
     */
 	public DaoLibro() {
-		System.out.println("DaoPersona -> Creando la lista de personas!");
+		System.out.println("Daolibro -> Creando la lista de libros!");
 		listaLibros = new ArrayList<Libro>();
 		Libro p1 = new Libro(contador++,"EL SEÑOR DE LOS ANILLOS", "MINOTAURO", 10);//ID: 0
 		Libro p2 = new Libro(contador++,"FRAY PERICO Y SU BORRICO","EDICIONES SM", 9);//ID: 1
