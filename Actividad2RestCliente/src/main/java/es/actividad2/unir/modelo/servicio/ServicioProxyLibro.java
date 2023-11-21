@@ -27,7 +27,7 @@ import es.actividad2.unir.modelo.entidad.Libro;
 @Service
 public class ServicioProxyLibro {
 	
-	//La URL base del servicio REST de personas
+	//La URL base del servicio REST de libros
 	public static final String URL = "http://localhost:8080/libros/";
 	
 	//Inyectamos el objeto de tipo RestTemplate que nos ayudará
@@ -47,7 +47,7 @@ public class ServicioProxyLibro {
 		try {
 			//Para hacer un post de una entidad usamos el metodo postForEntity
 			//El primer parametro la URL
-			//El segundo parametros la persona que ira en body
+			//El segundo parametros el libro que ira en body
 			//El tercer parametro el objeto que esperamos que nos envie el servidor
 			ResponseEntity<Libro> re = restTemplate.postForEntity(URL, l, Libro.class);
 			System.out.println("alta -> Codigo de respuesta " + re.getStatusCode());
@@ -69,7 +69,7 @@ public class ServicioProxyLibro {
 		try {
 			//El metodo delete tampoco devuelve nada, por lo que si no 
 			//ha podido borrar el id, daría un excepcion
-			//Ej http://localhost:8080/personas/1 DELETE
+			//Ej http://localhost:8080/libros/1 DELETE
 			restTemplate.delete(URL + id);
 			return true;
 		} catch (HttpClientErrorException e) {
@@ -111,13 +111,13 @@ public class ServicioProxyLibro {
 		try {
 			//Como el servicio trabaja con objetos ResponseEntity, nosotros 
 			//tambien podemos hacerlo en el cliente
-			//Ej http://localhost:8080/personas/1 GET
+			//Ej http://localhost:8080/libros/1 GET
 			ResponseEntity<Libro> re = restTemplate.getForEntity(URL + id, Libro.class);
 			HttpStatus hs= re.getStatusCode();
 			if(hs == HttpStatus.OK) {	
-				//Si la persona existe, la persona viene en formato JSON en el body
-				//Al ser el objeto ResponseEntity de tipo Persona, al obtener el 
-				//body me lo convierte automaticamente a tipo Persona
+				//Si el libro existe, el libro viene en formato JSON en el body
+				//Al ser el objeto ResponseEntity de tipo libros, al obtener el 
+				//body me lo convierte automaticamente a tipo libros
 				//(Spring utiliza librerías por debajo para pasar de JSON a objeto)
 				return re.getBody();
 			}else {
@@ -145,7 +145,7 @@ public class ServicioProxyLibro {
 		}
 		
 		try {
-			//Ej http://localhost:8080/personas?nombre=harry GET
+			//Ej http://localhost:8080/libros?nombre=harry GET
 			ResponseEntity<Libro[]> response =
 					  restTemplate.getForEntity(URL + queryParams,Libro[].class);
 			Libro[] arrayLibros = response.getBody();
