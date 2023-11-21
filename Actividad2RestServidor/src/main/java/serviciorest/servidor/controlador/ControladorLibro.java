@@ -45,7 +45,7 @@ public class ControladorLibro {
 	//1.Dar de alta un libro
 	//POST 
 	//"http://localhost:8080/libros" y el metodo a usar seria POST
-	//Pasandole la persona sin el ID dentro del body del HTTP request
+	//Pasandole el libro sin el ID dentro del body del HTTP request
 	/**
      * Método para dar de alta un libro.
      *
@@ -73,7 +73,7 @@ public class ControladorLibro {
 	//Aqui vamos a borar un libro a traves de un ID que le pasemos en el
 	//PATH.
 	//La URL para acceder a este metodo sería: 
-	//"http://localhost:8080/personas/ID" y el metodo a usar seria DELETE
+	//"http://localhost:8080/libros/ID" y el metodo a usar seria DELETE
 	/**
      * Método para dar de baja un libro por ID.
      *
@@ -96,7 +96,7 @@ public class ControladorLibro {
 	
 	//PUT
 	//Si todo ha ido bien devolvemos el codigo de respuesta de 200 OK,
-	//si id de la persona no existe devolvemos 404 NOT FOUND
+	//si id de el libro no existe devolvemos 404 NOT FOUND
 	
 	//La URL para acceder a este metodo sería: 
 	//"http://localhost:8080/libros/ID" y el metodo a usar seria PUT
@@ -126,11 +126,11 @@ public class ControladorLibro {
 	
 	//4. Obtener un libro por ID
 
-	//GET PERSONA POR ID
+	//GET libro POR ID
 	//el codigo 200 "OK" si existe o 404 NOT FOUND si no existe
 	
 	//La URL para acceder a este metodo sería: 
-	//"http://localhost:8080/personas/ID" y el metodo a usar seria GET
+	//"http://localhost:8080/libros/ID" y el metodo a usar seria GET
 	//ID sería el identificador que queremos buscar
 	/**
      * Método para obtener un libro por ID.
@@ -140,7 +140,7 @@ public class ControladorLibro {
      *         HttpStatus.OK si la operación es exitosa, HttpStatus.NOT_FOUND si hay un error.
      */
 	@GetMapping(path="libros/{id}",produces = MediaType.APPLICATION_JSON_VALUE)	
-	public ResponseEntity<Libro> getPersona(@PathVariable("id") int id) {
+	public ResponseEntity<Libro> getlibro(@PathVariable("id") int id) {
 		System.out.println("Buscando libro con id: " + id);
 		Libro l = daoLibro.get(id);
 		if(l != null) {
@@ -152,9 +152,9 @@ public class ControladorLibro {
 	
 	//5. Listar todos los libros
 	
-	//GET LISTA PERSONAS
+	//GET LISTA libros
 	
-	//La URL para acceder a este metodo en caso de querer todas las personas
+	//La URL para acceder a este metodo en caso de querer todas las libros
 	//sería: 
 	//"http://localhost:8080/libros" y el metodo a usar seria GET
 	 /**
