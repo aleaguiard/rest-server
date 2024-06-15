@@ -1,36 +1,35 @@
-# rest-server
+# REST Server
 
-Pautas de elaboración
+Este proyecto implementa un servicio REST en Java para la gestión de libros, proporcionando un CRUD completo. El servidor REST se inicia con 5 libros predefinidos y permite las siguientes operaciones:
 
-Requerimiento 1
+- Crear un libro.
+- Eliminar un libro por ID.
+- Modificar un libro por ID.
+- Obtener un libro por ID.
+- Listar todos los libros.
 
-Se pide hacer un servicio REST, dicho servicio gestionará una serie de Libros.
+El intercambio de datos se realiza en formato JSON y es consumible mediante clientes como Postman. Adicionalmente, se ha desarrollado una aplicación Java que interactúa con el servidor REST a través de un menú, permitiendo realizar todas las operaciones mencionadas anteriormente.
 
-Los libros tendrán un ID, un título, una editorial y una nota. Los libros se encontrarán alojados en el servidor REST. Dicho servidor cuando arranque tendrá 5 libros preestablecidos con todos los datos rellenos. Los libros se guardarán en memoria en cualquier tipo de estructura de datos (como puede ser una lista).
+## Requerimientos
 
-El servicio REST proporcionará un servicio CRUD completo, y podrá ser consumido mediante un cliente como Postman y todo el intercambio de mensajes se hará a través de JSON.
+- Operaciones CRUD: Los libros tienen un ID, un título, una editorial y una nota.
+- Validación: No se permiten IDs o títulos duplicados.
+- Cliente Java: Aplicación con menú para interactuar con el servidor.
 
-Además, se pide a través de Postman realizar las siguientes tareas y apreciar los resultados:
+## Tecnologías
 
-Dar de alta un libro
-Dar de baja un libro por ID
-Modificar un libro por ID
-Obtener un libro por ID
-Listar todos los libros
-Es importante entender el funcionamiento del cliente Postman, como puede ser entender las URLs de acceso a los diferentes puntos de acceso de nuestro servicio REST, los verbos y métodos HTTP que tenemos emplear para cada una de las peticiones, así como en que parte del mensaje HTTP viaja la información.
+- Java
+- Spring Boot
+- JSON
 
-Requerimiento 2
+## Uso
 
-Se pide que no pueda haber dos libros con ID o título repetido
+### Servidor REST
 
-Requerimiento 3
+1. Clona el repositorio.
+2. Navega al directorio del proyecto.
+3. Ejecuta el servidor con `mvn spring-boot:run`.
 
-Se pide crear una aplicación java que sea capaz de trabajar con el servidor REST. La aplicación mostrara un menú que sea capaz de realizar todas las operaciones del servidor, como puede ser:
+### Cliente Java
 
-Dar de alta un libro
-Dar de baja un libro por ID
-Modificar un libro por ID
-Obtener un libro por ID
-Listar todos los libros
-Salir
-Para cada opción, se tendrá que pedir los datos necesarios al usuario y/o mostrar los resultados pertinentes. La aplicación se ejecutará hasta que se pulse la opción de “salir”.
+Compila y ejecuta la aplicación cliente desde el directorio A2_ServiciosRestCliente.
